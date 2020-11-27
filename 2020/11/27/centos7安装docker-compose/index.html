@@ -15,16 +15,23 @@
   <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
   <meta http-equiv="window-target" content="_top" />
   
-  <title>the Book of Changes</title>
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/index.html">
+  <title>centos7安装docker-compose | the Book of Changes</title>
+  <meta name="description" content="参考文档 https:&#x2F;&#x2F;docs.docker.com&#x2F;compose&#x2F;install&#x2F;  1.查看docker-compose版本 https:&#x2F;&#x2F;github.com&#x2F;docker&#x2F;compose&#x2F;releases 截至发稿，最新版本为1.27.4  2.安装1sudo curl -L &quot;https:&#x2F;&#x2F;get.daocloud.io&#x2F;docker&#x2F;compose&#x2F;releases">
+<meta property="og:type" content="article">
+<meta property="og:title" content="centos7安装docker-compose">
+<meta property="og:url" content="http://example.com/2020/11/27/centos7%E5%AE%89%E8%A3%85docker-compose/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="参考文档 https:&#x2F;&#x2F;docs.docker.com&#x2F;compose&#x2F;install&#x2F;  1.查看docker-compose版本 https:&#x2F;&#x2F;github.com&#x2F;docker&#x2F;compose&#x2F;releases 截至发稿，最新版本为1.27.4  2.安装1sudo curl -L &quot;https:&#x2F;&#x2F;get.daocloud.io&#x2F;docker&#x2F;compose&#x2F;releases">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-11-27T11:50:51.000Z">
+<meta property="article:modified_time" content="2020-11-27T12:03:42.737Z">
 <meta property="article:author" content="John Doe">
+<meta property="article:tag" content="docker">
+<meta property="article:tag" content="docker-compose">
+<meta property="article:tag" content="centos">
 <meta name="twitter:card" content="summary">
   <!-- Canonical links -->
-  <link rel="canonical" href="http://example.com/index.html">
+  <link rel="canonical" href="http://example.com/2020/11/27/centos7%E5%AE%89%E8%A3%85docker-compose/index.html">
   
     <link rel="icon" href="/images/avatar.jpg" type="image/x-icon">
   
@@ -266,85 +273,51 @@
 </aside>
 
   
-  <main class="main" role="main">
   
-  <div class="content article-list">
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-centos7安装docker-compose" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
     
-      <article class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="article-header">
-    
+    <div class="article-header">
+      
+        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/11/27/docker%E8%BF%9C%E7%A8%8B%E8%AE%BF%E9%97%AE2375%E7%AB%AF%E5%8F%A3/">docker远程访问2375端口</a>
+    <h1 class="article-title" itemprop="name">
+      centos7安装docker-compose
     </h1>
   
 
-  </div>
-  
-  <p class="article-meta">
-    <span class="article-date">
-    <i class="icon icon-calendar-check"></i>
-	<a href="/2020/11/27/docker%E8%BF%9C%E7%A8%8B%E8%AE%BF%E9%97%AE2375%E7%AB%AF%E5%8F%A3/" class="article-date">
-	  <time datetime="2020-11-27T12:58:05.000Z" itemprop="datePublished">11月 27</time>
-	</a>
-</span>
-    
-  <span class="article-category">
-    <i class="icon icon-folder"></i>
-    <a class="article-category-link" href="/categories/%E8%BF%90%E7%BB%B4/">运维</a>
-  </span>
-
-    
-  <span class="article-tag">
-    <i class="icon icon-tags"></i>
-	<a class="article-tag-link-link" href="/tags/docker/" rel="tag">docker</a>
-  </span>
-
-
-    
-	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 135(字)</span>
-	
-	
-		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 1(分)</span>
-	
-
-  </p>
-</article>
-
-    
-      <article class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="article-header">
-    
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/11/27/centos7%E5%AE%89%E8%A3%85docker-compose/">centos7安装docker-compose</a>
-    </h1>
-  
-
-  </div>
-  
-  <p class="article-meta">
-    <span class="article-date">
+      
+      <div class="article-meta">
+        <span class="article-date">
     <i class="icon icon-calendar-check"></i>
 	<a href="/2020/11/27/centos7%E5%AE%89%E8%A3%85docker-compose/" class="article-date">
-	  <time datetime="2020-11-27T11:50:51.000Z" itemprop="datePublished">11月 27</time>
+	  <time datetime="2020-11-27T11:50:51.000Z" itemprop="datePublished">2020-11-27</time>
 	</a>
 </span>
-    
+        
   <span class="article-category">
     <i class="icon icon-folder"></i>
     <a class="article-category-link" href="/categories/%E8%BF%90%E7%BB%B4/">运维</a>
   </span>
 
-    
+        
   <span class="article-tag">
     <i class="icon icon-tags"></i>
 	<a class="article-tag-link-link" href="/tags/centos/" rel="tag">centos</a>, <a class="article-tag-link-link" href="/tags/docker/" rel="tag">docker</a>, <a class="article-tag-link-link" href="/tags/docker-compose/" rel="tag">docker-compose</a>
   </span>
 
 
-    
+        
+	<span class="article-read hidden-xs">
+	    <i class="icon icon-eye-fill" aria-hidden="true"></i>
+	    <span id="busuanzi_container_page_pv">
+			<span id="busuanzi_value_page_pv">0</span>
+		</span>
+	</span>
+
+
+        
 	
 		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 131(字)</span>
 	
@@ -352,56 +325,154 @@
 		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 1(分)</span>
 	
 
-  </p>
-</article>
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <h2 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://docs.docker.com/compose/install/">https://docs.docker.com/compose/install/</a></li>
+</ul>
+<h2 id="1-查看docker-compose版本"><a href="#1-查看docker-compose版本" class="headerlink" title="1.查看docker-compose版本"></a>1.查看docker-compose版本</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/docker/compose/releases">https://github.com/docker/compose/releases</a></li>
+<li>截至发稿，最新版本为<a target="_blank" rel="noopener" href="https://github.com/docker/compose/releases/tag/1.27.4">1.27.4</a></li>
+</ul>
+<h2 id="2-安装"><a href="#2-安装" class="headerlink" title="2.安装"></a>2.安装</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo curl -L &quot;https://get.daocloud.io/docker/compose/releases/download/1.27.4/docker-compose-$(uname -s)-$(uname -m)&quot; -o /usr/local/bin/docker-compose</span><br></pre></td></tr></table></figure>
 
-    
-      <article class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="article-header">
-    
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/11/27/centos7%E5%AE%89%E8%A3%85docker/">centos7安装docker</a>
-    </h1>
-  
+<ul>
+<li>docker极速下载<ul>
+<li><a target="_blank" rel="noopener" href="https://get.daocloud.io/">https://get.daocloud.io/</a></li>
+</ul>
+</li>
+<li>如需其他版本，将1.27.4替换为响应版本即可</li>
+</ul>
+<h2 id="3-修改权限"><a href="#3-修改权限" class="headerlink" title="3.修改权限"></a>3.修改权限</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo chmod +x /usr/local/bin/docker-compose</span><br></pre></td></tr></table></figure>
 
+
+
+<h2 id="4-创建链接"><a href="#4-创建链接" class="headerlink" title="4.创建链接"></a>4.创建链接</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="5-查看版本"><a href="#5-查看版本" class="headerlink" title="5.查看版本"></a>5.查看版本</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker-compose --version</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="http://example.com/2020/11/27/centos7%E5%AE%89%E8%A3%85docker-compose/" title="centos7安装docker-compose" target="_blank" rel="external">http://example.com/2020/11/27/centos7%E5%AE%89%E8%A3%85docker-compose/</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/wuxingye" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/images/avatar.jpg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/wuxingye" target="_blank"><span class="text-dark">武兴业</span><small class="ml-1x">Java</small></a></h3>
+        <div>个人简介。</div>
+      </div>
+    </figure>
   </div>
+</div>
+
+
+    </div>
+  </article>
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
   
-  <p class="article-meta">
-    <span class="article-date">
-    <i class="icon icon-calendar-check"></i>
-	<a href="/2020/11/27/centos7%E5%AE%89%E8%A3%85docker/" class="article-date">
-	  <time datetime="2020-11-27T10:07:23.000Z" itemprop="datePublished">11月 27</time>
-	</a>
-</span>
+  <ul class="pager pull-left">
     
-  <span class="article-category">
-    <i class="icon icon-folder"></i>
-    <a class="article-category-link" href="/categories/%E8%BF%90%E7%BB%B4/">运维</a>
-  </span>
-
+    <li class="prev">
+      <a href="/2020/11/27/docker%E8%BF%9C%E7%A8%8B%E8%AE%BF%E9%97%AE2375%E7%AB%AF%E5%8F%A3/" title="docker远程访问2375端口"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
+    </li>
     
-  <span class="article-tag">
-    <i class="icon icon-tags"></i>
-	<a class="article-tag-link-link" href="/tags/centos/" rel="tag">centos</a>, <a class="article-tag-link-link" href="/tags/docker/" rel="tag">docker</a>
-  </span>
-
-
     
-	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 252(字)</span>
-	
-	
-		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 1(分)</span>
-	
-
-  </p>
-</article>
-
+    <li class="next">
+      <a href="/2020/11/27/centos7%E5%AE%89%E8%A3%85docker/" title="centos7安装docker"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-fancy btn-donate pop-onhover bg-gradient-warning" data-toggle="modal" data-target="#donateModal"><span>赏</span></button>
+  <!-- <div class="wave-icon wave-icon-danger btn-donate" data-toggle="modal" data-target="#donateModal">
+    <div class="wave-circle"><span class="icon"><i class="icon icon-bill"></i></span></div>
+  </div> -->
+  
+  
+  <div class="bar-right">
+    
+    <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter" data-mobile-sites="weibo,qq,qzone"></div>
     
   </div>
+  </div>
+</nav>
+  
+<!-- Modal -->
+<div class="modal modal-center modal-small modal-xs-full fade" id="donateModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content donate">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <div class="modal-body">
+        <div class="donate-box">
+          <div class="donate-head">
+            <p>感谢您的支持，我会继续努力的!</p>
+          </div>
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane fade active in" id="alipay">
+              <div class="donate-payimg">
+                <img src="/images/donate/alipayimg.png" alt="扫码支持" title="扫一扫" />
+              </div>
+              <p class="text-muted mv">扫码打赏，你说多少就多少</p>
+              <p class="text-grey">打开支付宝扫一扫，即可进行扫码打赏哦</p>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="wechatpay">
+              <div class="donate-payimg">
+                <img src="/images/donate/wechatpayimg.png" alt="扫码支持" title="扫一扫" />
+              </div>
+              <p class="text-muted mv">扫码打赏，你说多少就多少</p>
+              <p class="text-grey">打开微信扫一扫，即可进行扫码打赏哦</p>
+            </div>
+          </div>
+          <div class="donate-footer">
+            <ul class="nav nav-tabs nav-justified" role="tablist">
+              <li role="presentation" class="active">
+                <a href="#alipay" id="alipay-tab" role="tab" data-toggle="tab" aria-controls="alipay" aria-expanded="true"><i class="icon icon-alipay"></i> 支付宝</a>
+              </li>
+              <li role="presentation" class="">
+                <a href="#wechatpay" role="tab" id="wechatpay-tab" data-toggle="tab" aria-controls="wechatpay" aria-expanded="false"><i class="icon icon-wepay"></i> 微信支付</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-   
+
+
+
 </main>
 
   <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">

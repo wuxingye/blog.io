@@ -15,18 +15,22 @@
   <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
   <meta http-equiv="window-target" content="_top" />
   
-  <title>404 Not Found：该页无法显示 | the Book of Changes</title>
-  <meta property="og:type" content="website">
-<meta property="og:title" content="404 Not Found：该页无法显示">
-<meta property="og:url" content="http://example.com/404.html">
+  <title>centos7安装docker | the Book of Changes</title>
+  <meta name="description" content="操作系统为centos7.5参考文档 https:&#x2F;&#x2F;docs.docker.com&#x2F;engine&#x2F;install&#x2F;centos&#x2F;  1.更新yum1sudo yum update  2.删除已安装docker1sudo yum remove docker  docker-common docker-selinux docker-engine  3.安装需要的软件包 yum-util 提供yum-">
+<meta property="og:type" content="article">
+<meta property="og:title" content="centos7安装docker">
+<meta property="og:url" content="http://example.com/2020/11/27/centos7%E5%AE%89%E8%A3%85docker/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="操作系统为centos7.5参考文档 https:&#x2F;&#x2F;docs.docker.com&#x2F;engine&#x2F;install&#x2F;centos&#x2F;  1.更新yum1sudo yum update  2.删除已安装docker1sudo yum remove docker  docker-common docker-selinux docker-engine  3.安装需要的软件包 yum-util 提供yum-">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-11-27T07:38:23.436Z">
-<meta property="article:modified_time" content="2020-11-27T07:38:23.436Z">
+<meta property="article:published_time" content="2020-11-27T10:07:23.000Z">
+<meta property="article:modified_time" content="2020-11-27T12:04:37.534Z">
 <meta property="article:author" content="John Doe">
+<meta property="article:tag" content="docker">
+<meta property="article:tag" content="centos">
 <meta name="twitter:card" content="summary">
   <!-- Canonical links -->
-  <link rel="canonical" href="http://example.com/404.html">
+  <link rel="canonical" href="http://example.com/2020/11/27/centos7%E5%AE%89%E8%A3%85docker/index.html">
   
     <link rel="icon" href="/images/avatar.jpg" type="image/x-icon">
   
@@ -271,14 +275,14 @@
   
 <main class="main" role="main">
   <div class="content">
-  <article id="page-" class="article article-type-page" itemscope itemtype="http://schema.org/BlogPosting">
+  <article id="post-centos7安装docker" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
     
     <div class="article-header">
       
         
   
     <h1 class="article-title" itemprop="name">
-      404 Not Found：该页无法显示
+      centos7安装docker
     </h1>
   
 
@@ -286,12 +290,22 @@
       <div class="article-meta">
         <span class="article-date">
     <i class="icon icon-calendar-check"></i>
-	<a href="/404.html" class="article-date">
-	  <time datetime="2020-11-27T07:38:23.436Z" itemprop="datePublished">2020-11-27</time>
+	<a href="/2020/11/27/centos7%E5%AE%89%E8%A3%85docker/" class="article-date">
+	  <time datetime="2020-11-27T10:07:23.000Z" itemprop="datePublished">2020-11-27</time>
 	</a>
 </span>
         
+  <span class="article-category">
+    <i class="icon icon-folder"></i>
+    <a class="article-category-link" href="/categories/%E8%BF%90%E7%BB%B4/">运维</a>
+  </span>
+
         
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link-link" href="/tags/centos/" rel="tag">centos</a>, <a class="article-tag-link-link" href="/tags/docker/" rel="tag">docker</a>
+  </span>
+
 
         
 	<span class="article-read hidden-xs">
@@ -304,7 +318,7 @@
 
         
 	
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 0(字)</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">字数统计: 252(字)</span>
 	
 	
 		<span class="post-readcount hidden-xs" itemprop="timeRequired">阅读时长: 1(分)</span>
@@ -314,7 +328,37 @@
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <script type="text/javascript" src="http://www.qq.com/404/search_children.js" charset="utf-8" homePageUrl="http://blog.cofess.com" homePageName="回到我的主页"></script>
+        <h2 id="操作系统为centos7-5"><a href="#操作系统为centos7-5" class="headerlink" title="操作系统为centos7.5"></a>操作系统为centos7.5</h2><h2 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://docs.docker.com/engine/install/centos/">https://docs.docker.com/engine/install/centos/</a></li>
+</ul>
+<h3 id="1-更新yum"><a href="#1-更新yum" class="headerlink" title="1.更新yum"></a>1.更新yum</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo yum update</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-删除已安装docker"><a href="#2-删除已安装docker" class="headerlink" title="2.删除已安装docker"></a>2.删除已安装docker</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo yum remove docker  docker-common docker-selinux docker-engine</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-安装需要的软件包"><a href="#3-安装需要的软件包" class="headerlink" title="3.安装需要的软件包"></a>3.安装需要的软件包</h3><ul>
+<li>yum-util 提供yum-config-manager功能，</li>
+<li>另外两个是devicemapper驱动依赖的<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo yum install -y yum-utils device-mapper-persistent-data lvm2</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="4-设置yum源"><a href="#4-设置yum源" class="headerlink" title="4.设置yum源"></a>4.设置yum源</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo yum-config-manager --add-repo http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;docker-ce&#x2F;linux&#x2F;centos&#x2F;docker-ce.repo</span><br></pre></td></tr></table></figure>
+
+<h3 id="5-查看docker版本"><a href="#5-查看docker版本" class="headerlink" title="5.查看docker版本"></a>5.查看docker版本</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum list docker-ce --showduplicates | sort -r</span><br></pre></td></tr></table></figure>
+
+<h3 id="6-安装docker"><a href="#6-安装docker" class="headerlink" title="6.安装docker"></a>6.安装docker</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo yum install docker-ce  #由于repo中默认只开启stable仓库，故这里安装的是最新稳定版17.12.0</span><br><span class="line">sudo yum install &lt;FQPN&gt;     # 例如：sudo yum install docker-ce-17.12.0.ce</span><br></pre></td></tr></table></figure>
+
+<h3 id="7-启动并加入开机启动"><a href="#7-启动并加入开机启动" class="headerlink" title="7.启动并加入开机启动"></a>7.启动并加入开机启动</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl start docker</span><br><span class="line">sudo systemctl enable docker</span><br></pre></td></tr></table></figure>
+
+<h3 id="8-设置docker-repository镜像"><a href="#8-设置docker-repository镜像" class="headerlink" title="8.设置docker repository镜像"></a>8.设置docker repository镜像</h3><ul>
+<li>vi /etc/docker/daemon.json</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;registry-mirrors&quot;: [&quot;http:&#x2F;&#x2F;registry.docker-cn.com&quot;]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;registry-mirrors&quot;: [&quot;http:&#x2F;&#x2F;d1d9aef0.m.daocloud.io&quot;]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">&quot;registry-mirrors&quot;: [&quot;https:&#x2F;&#x2F;3laho3y3.mirror.aliyuncs.com&quot;]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="9-查看docker版本"><a href="#9-查看docker版本" class="headerlink" title="9.查看docker版本"></a>9.查看docker版本</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker version</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -324,7 +368,7 @@
     
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接：</strong>
-      <a href="http://example.com/404.html" title="404 Not Found：该页无法显示" target="_blank" rel="external">http://example.com/404.html</a>
+      <a href="http://example.com/2020/11/27/centos7%E5%AE%89%E8%A3%85docker/" title="centos7安装docker" target="_blank" rel="external">http://example.com/2020/11/27/centos7%E5%AE%89%E8%A3%85docker/</a>
     </li>
     
     <li class="post-copyright-license">
@@ -357,6 +401,16 @@
 
   <nav class="bar bar-footer clearfix" data-stick-bottom>
   <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    <li class="prev">
+      <a href="/2020/11/27/centos7%E5%AE%89%E8%A3%85docker-compose/" title="centos7安装docker-compose"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
+    </li>
+    
+    
+    
+  </ul>
   
   
   <!-- Button trigger modal -->
@@ -463,6 +517,11 @@ window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
 <script src="/js/insight.js"></script>
 
 
+
+
+
+   
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
 
 

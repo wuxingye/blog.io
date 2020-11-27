@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2020-11-27T06:33:34.499Z</updated>
+  <updated>2020-11-27T14:47:59.669Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -17,22 +17,81 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Hello World</title>
-    <link href="http://example.com/2020/11/27/hello-world/"/>
-    <id>http://example.com/2020/11/27/hello-world/</id>
-    <published>2020-11-27T06:33:34.499Z</published>
-    <updated>2020-11-27T06:33:34.499Z</updated>
+    <title>docker远程访问2375端口</title>
+    <link href="http://example.com/2020/11/27/docker%E8%BF%9C%E7%A8%8B%E8%AE%BF%E9%97%AE2375%E7%AB%AF%E5%8F%A3/"/>
+    <id>http://example.com/2020/11/27/docker%E8%BF%9C%E7%A8%8B%E8%AE%BF%E9%97%AE2375%E7%AB%AF%E5%8F%A3/</id>
+    <published>2020-11-27T12:58:05.000Z</published>
+    <updated>2020-11-27T14:47:59.669Z</updated>
     
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+    <content type="html"><![CDATA[<h1 id="本质上是服务器开放2375端口，可远程访问docker-API"><a href="#本质上是服务器开放2375端口，可远程访问docker-API" class="headerlink" title="本质上是服务器开放2375端口，可远程访问docker API"></a>本质上是服务器开放2375端口，可远程访问docker API</h1><h2 id="1-编辑docker文件"><a href="#1-编辑docker文件" class="headerlink" title="1.编辑docker文件"></a>1.编辑docker文件</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi /lib/systemd/system/docker.service</span><br></pre></td></tr></table></figure><h2 id="2-开放2375端口"><a href="#2-开放2375端口" class="headerlink" title="2.开放2375端口"></a>2.开放2375端口</h2><ul><li>添加 -H tcp://0.0.0.0:2375</li></ul><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ExecStart=/usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock -H tcp://0.0.0.0:2375</span><br></pre></td></tr></table></figure><h2 id="3-重新加载配置"><a href="#3-重新加载配置" class="headerlink" title="3.重新加载配置"></a>3.重新加载配置</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl daemon-reload</span><br></pre></td></tr></table></figure><h2 id="4-重启docker"><a href="#4-重启docker" class="headerlink" title="4.重启docker"></a>4.重启docker</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service docker restart</span><br></pre></td></tr></table></figure><h2 id="5-关闭防火墙"><a href="#5-关闭防火墙" class="headerlink" title="5.关闭防火墙"></a>5.关闭防火墙</h2><ul><li>自己装的系统需要关闭防火墙</li><li>云服务器（阿里云/腾讯云/百度云）不需要（亲测）</li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">systemctl status firewalld</span><br><span class="line"></span><br><span class="line">firewall-cmd --state</span><br><span class="line"></span><br><span class="line"># 开启</span><br><span class="line">service firewalld start</span><br><span class="line"># 重启</span><br><span class="line">service firewalld restart</span><br><span class="line"># 关闭</span><br><span class="line">service firewalld stop</span><br></pre></td></tr></table></figure>]]></content>
     
     
       
       
-    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt; for</summary>
+    <summary type="html">&lt;h1 id=&quot;本质上是服务器开放2375端口，可远程访问docker-API&quot;&gt;&lt;a href=&quot;#本质上是服务器开放2375端口，可远程访问docker-API&quot; class=&quot;headerlink&quot; title=&quot;本质上是服务器开放2375端口，可远程访问docker AP</summary>
       
     
     
     
+    <category term="运维" scheme="http://example.com/categories/%E8%BF%90%E7%BB%B4/"/>
+    
+    
+    <category term="docker" scheme="http://example.com/tags/docker/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>centos7安装docker-compose</title>
+    <link href="http://example.com/2020/11/27/centos7%E5%AE%89%E8%A3%85docker-compose/"/>
+    <id>http://example.com/2020/11/27/centos7%E5%AE%89%E8%A3%85docker-compose/</id>
+    <published>2020-11-27T11:50:51.000Z</published>
+    <updated>2020-11-27T12:03:42.737Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h2><ul><li><a href="https://docs.docker.com/compose/install/">https://docs.docker.com/compose/install/</a></li></ul><h2 id="1-查看docker-compose版本"><a href="#1-查看docker-compose版本" class="headerlink" title="1.查看docker-compose版本"></a>1.查看docker-compose版本</h2><ul><li><a href="https://github.com/docker/compose/releases">https://github.com/docker/compose/releases</a></li><li>截至发稿，最新版本为<a href="https://github.com/docker/compose/releases/tag/1.27.4">1.27.4</a></li></ul><h2 id="2-安装"><a href="#2-安装" class="headerlink" title="2.安装"></a>2.安装</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo curl -L &quot;https://get.daocloud.io/docker/compose/releases/download/1.27.4/docker-compose-$(uname -s)-$(uname -m)&quot; -o /usr/local/bin/docker-compose</span><br></pre></td></tr></table></figure><ul><li>docker极速下载<ul><li><a href="https://get.daocloud.io/">https://get.daocloud.io/</a></li></ul></li><li>如需其他版本，将1.27.4替换为响应版本即可</li></ul><h2 id="3-修改权限"><a href="#3-修改权限" class="headerlink" title="3.修改权限"></a>3.修改权限</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo chmod +x /usr/local/bin/docker-compose</span><br></pre></td></tr></table></figure><h2 id="4-创建链接"><a href="#4-创建链接" class="headerlink" title="4.创建链接"></a>4.创建链接</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose</span><br></pre></td></tr></table></figure><h2 id="5-查看版本"><a href="#5-查看版本" class="headerlink" title="5.查看版本"></a>5.查看版本</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker-compose --version</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;参考文档&quot;&gt;&lt;a href=&quot;#参考文档&quot; class=&quot;headerlink&quot; title=&quot;参考文档&quot;&gt;&lt;/a&gt;参考文档&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://docs.docker.com/compose/install/&quot;&gt;https</summary>
+      
+    
+    
+    
+    <category term="运维" scheme="http://example.com/categories/%E8%BF%90%E7%BB%B4/"/>
+    
+    
+    <category term="docker" scheme="http://example.com/tags/docker/"/>
+    
+    <category term="docker-compose" scheme="http://example.com/tags/docker-compose/"/>
+    
+    <category term="centos" scheme="http://example.com/tags/centos/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>centos7安装docker</title>
+    <link href="http://example.com/2020/11/27/centos7%E5%AE%89%E8%A3%85docker/"/>
+    <id>http://example.com/2020/11/27/centos7%E5%AE%89%E8%A3%85docker/</id>
+    <published>2020-11-27T10:07:23.000Z</published>
+    <updated>2020-11-27T12:04:37.534Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="操作系统为centos7-5"><a href="#操作系统为centos7-5" class="headerlink" title="操作系统为centos7.5"></a>操作系统为centos7.5</h2><h2 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h2><ul><li><a href="https://docs.docker.com/engine/install/centos/">https://docs.docker.com/engine/install/centos/</a></li></ul><h3 id="1-更新yum"><a href="#1-更新yum" class="headerlink" title="1.更新yum"></a>1.更新yum</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo yum update</span><br></pre></td></tr></table></figure><h3 id="2-删除已安装docker"><a href="#2-删除已安装docker" class="headerlink" title="2.删除已安装docker"></a>2.删除已安装docker</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo yum remove docker  docker-common docker-selinux docker-engine</span><br></pre></td></tr></table></figure><h3 id="3-安装需要的软件包"><a href="#3-安装需要的软件包" class="headerlink" title="3.安装需要的软件包"></a>3.安装需要的软件包</h3><ul><li>yum-util 提供yum-config-manager功能，</li><li>另外两个是devicemapper驱动依赖的<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo yum install -y yum-utils device-mapper-persistent-data lvm2</span><br></pre></td></tr></table></figure></li></ul><h3 id="4-设置yum源"><a href="#4-设置yum源" class="headerlink" title="4.设置yum源"></a>4.设置yum源</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo yum-config-manager --add-repo http:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;docker-ce&#x2F;linux&#x2F;centos&#x2F;docker-ce.repo</span><br></pre></td></tr></table></figure><h3 id="5-查看docker版本"><a href="#5-查看docker版本" class="headerlink" title="5.查看docker版本"></a>5.查看docker版本</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum list docker-ce --showduplicates | sort -r</span><br></pre></td></tr></table></figure><h3 id="6-安装docker"><a href="#6-安装docker" class="headerlink" title="6.安装docker"></a>6.安装docker</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo yum install docker-ce  #由于repo中默认只开启stable仓库，故这里安装的是最新稳定版17.12.0</span><br><span class="line">sudo yum install &lt;FQPN&gt;     # 例如：sudo yum install docker-ce-17.12.0.ce</span><br></pre></td></tr></table></figure><h3 id="7-启动并加入开机启动"><a href="#7-启动并加入开机启动" class="headerlink" title="7.启动并加入开机启动"></a>7.启动并加入开机启动</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl start docker</span><br><span class="line">sudo systemctl enable docker</span><br></pre></td></tr></table></figure><h3 id="8-设置docker-repository镜像"><a href="#8-设置docker-repository镜像" class="headerlink" title="8.设置docker repository镜像"></a>8.设置docker repository镜像</h3><ul><li>vi /etc/docker/daemon.json</li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;registry-mirrors&quot;: [&quot;http:&#x2F;&#x2F;registry.docker-cn.com&quot;]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;registry-mirrors&quot;: [&quot;http:&#x2F;&#x2F;d1d9aef0.m.daocloud.io&quot;]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">&quot;registry-mirrors&quot;: [&quot;https:&#x2F;&#x2F;3laho3y3.mirror.aliyuncs.com&quot;]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="9-查看docker版本"><a href="#9-查看docker版本" class="headerlink" title="9.查看docker版本"></a>9.查看docker版本</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker version</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;操作系统为centos7-5&quot;&gt;&lt;a href=&quot;#操作系统为centos7-5&quot; class=&quot;headerlink&quot; title=&quot;操作系统为centos7.5&quot;&gt;&lt;/a&gt;操作系统为centos7.5&lt;/h2&gt;&lt;h2 id=&quot;参考文档&quot;&gt;&lt;a href=&quot;#参</summary>
+      
+    
+    
+    
+    <category term="运维" scheme="http://example.com/categories/%E8%BF%90%E7%BB%B4/"/>
+    
+    
+    <category term="docker" scheme="http://example.com/tags/docker/"/>
+    
+    <category term="centos" scheme="http://example.com/tags/centos/"/>
     
   </entry>
   
